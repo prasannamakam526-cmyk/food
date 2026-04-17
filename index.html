@@ -3,35 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Delicious Eats - Fine Dining Experience</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #d32f2f;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header img {
+            border-radius: 50%;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            margin-left: 2rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            display: flex;
+            height: 60vh;
+            min-height: 400px;
+        }
+        .hero-section {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            position: relative;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+        }
+        .hero-section h1 {
+            position: relative;
+            z-index: 1;
+            font-size: 3rem;
+            text-align: center;
+        }
+        .menu {
+            padding: 2rem;
+            background-color: #f5f5f5;
+        }
+        .menu h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #d32f2f;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .menu-item {
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+        .menu-item h3 {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            padding: 1rem;
+            background: rgba(0,0,0,0.6);
+            border-radius: 4px;
+        }
+        .about {
+            display: flex;
+            padding: 2rem;
+            background-color: white;
+        }
+        .about-text {
+            flex: 1;
+            padding-right: 2rem;
+        }
+        .about-image {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            min-height: 300px;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: #3e2723;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                height: auto;
+            }
+            .hero-section {
+                height: 50vh;
+                min-height: 300px;
+            }
+            .about {
+                flex-direction: column;
+            }
+            .about-text {
+                padding-right: 0;
+                padding-bottom: 2rem;
+            }
+            nav ul {
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #d32f2f;
+                display: none;
+            }
+            nav:hover ul {
+                display: flex;
+            }
+            nav li {
+                margin: 0;
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header style="height: 200px;background-color:red;">
-        <img src="./food.png" alt="logo" width="50px" height="50px"/>
-        <h2>
-            food
-        </h2>
+    <header>
+        <div style="display: flex; align-items: center;">
+            <img src="./food.png" alt="logo" width="50px" height="50px"/>
+            <h2 style="margin-left: 1rem;">Delicious Eats</h2>
+        </div>
         <nav>
-            <ul style="display:flex;list-style-type:none;">
-               <li>Home</li>
-               <li>About</li>
-               <li>Items</li>
-               <li>Bookings</li>
-               <li>Login</li>
-
+            <ul>
+               <li><a href="#home">Home</a></li>
+               <li><a href="#menu">Menu</a></li>
+               <li><a href="#about">About</a></li>
+               <li><a href="#bookings">Bookings</a></li>
+               <li><a href="#login">Login</a></li>
             </ul>
         </nav>
     </header>
-    <main style="height:1600px;background-color:antiquewhite">
-        <div style="display: flex;">
-            <article style="height:1600px;background-color:black;width: 50%;"></article>
-        <section style="height:1600px; width: 50%;background-color:blueviolet;">
-
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-section" style="background-image: url('https://source.unsplash.com/featured/?delicious-food');">
+                <h1>Delicious Food</h1>
+            </div>
+            <div class="hero-section" style="background-image: url('https://source.unsplash.com/featured/?restaurant-interior');">
+                <h1>Our Restaurant</h1>
+            </div>
         </section>
-
+        <section class="menu" id="menu">
+            <h2>Our Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-item" style="background-image: url('https://source.unsplash.com/featured/?pizza');">
+                    <h3>Pizza</h3>
+                </div>
+                <div class="menu-item" style="background-image: url('https://source.unsplash.com/featured/?burger');">
+                    <h3>Burgers</h3>
+                </div>
+                <div class="menu-item" style="background-image: url('https://source.unsplash.com/featured/?pasta');">
+                    <h3>Pasta</h3>
+                </div>
+                <div class="menu-item" style="background-image: url('https://source.unsplash.com/featured/?salad');">
+                    <h3>Salads</h3>
+                </div>
+                <div class="menu-item" style="background-image: url('https://source.unsplash.com/featured/?steak');">
+                    <h3>Steaks</h3>
+                </div>
+                <div class="menu-item" style="background-image: url('https://source.unsplash.com/featured/?dessert');">
+                    <h3>Desserts</h3>
+                </div>
+            </div>
+        </section>
+        <section class="about" id="about">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>Welcome to Delicious Eats, where culinary excellence meets warm hospitality. Our restaurant has been serving the finest dishes for over 20 years, using only the freshest ingredients and traditional cooking techniques passed down through generations.</p>
+                <p>Our passionate chefs create memorable dining experiences that bring people together. Whether you're celebrating a special occasion or simply enjoying a night out, we strive to make every meal unforgettable.</p>
+            </div>
+            <div class="about-image" style="background-image: url('https://source.unsplash.com/featured/?chef-cooking');"></div>
+        </section>
     </main>
-    <footer style="height: 400px; background-color:brown:">
-
+    <footer>
+        <p>&copy; 2026 Delicious Eats. All rights reserved.</p>
+        <p>Contact us at info@deliciouseats.com | Follow us on social media</p>
     </footer>
 </body>
 </html>
